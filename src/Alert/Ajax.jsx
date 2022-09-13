@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Swal from "sweetalert2";
 
+import { myFunc } from "./Webhook/Webhook";
+
+
+
 export default class AlertAjax extends Component {
   constructor() {
     super();
@@ -8,31 +12,26 @@ export default class AlertAjax extends Component {
   }
 
   HandleClick() {
-    Swal.fire({
+    const {value: discordID } = Swal.fire({
       ...this.props,
-      preConfirm: login => {
-        return fetch(`//api.github.com/users/${login}`, { crossdomain: true })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(response.statusText);
-            }
-            return response.json();
-          })
-          .catch(error => {
-            Swal.showValidationMessage(`Request failed: ${error}`);
-          });
-      },
-      allowOutsideClick: () => !Swal.isLoading()
-    }).then(result => {
-      if (result.value) {
-        Swal.fire({
-          title: `${result.value.login}'s avatar`,
-          text: `Name: ${result.value.name}`,
-          imageUrl: result.value.avatar_url
-        });
+      closeOnConfirm: false,
+      closeOnCancel: false,
+      preConfirm: (value) => {
+        if(!value) Swal.showValidationMessage('Write something!!')
       }
-    });
+    }).then(function(isConfirm){
+      if(isConfirm){
+        Swal.fire('Reported user.')
+        myFunc()
+      }
+    })
+    
+  
+    
+    
   }
+
+  
 
   render() {
     return (
@@ -44,3 +43,4 @@ export default class AlertAjax extends Component {
     );
   }
 }
+
