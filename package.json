@@ -16,6 +16,8 @@
 
     "discord.js": "^14.3.0",
 
+    "http": "^0.0.1-security",
+
     "react": "16.8.4",
 
     "react-dom": "16.8.4",

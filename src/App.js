@@ -9,6 +9,7 @@ import AlertSuccess from "./Alert/Success";
 import AlertTimer from "./Alert/Timer";
 import AlertAjax from "./Alert/Ajax";
 
+/* Data sets
 const ErrorData = {
     title: "Oops..",
     type: "error",
@@ -36,7 +37,7 @@ const ErrorData = {
     timer: 3000,
     showConfirmButton: false
   };
-  
+  */
   const AjaxData = {
     title: 'Report user.',  
     type: 'info',  
@@ -59,8 +60,10 @@ function App() {
                 <h2>
                     Tax The Poor
                     <img src={logo} className="App-logo" alt="logo"></img>
+                    <hr className="App-divider"></hr>
                 </h2>
                 <br />
+                {/*   
                 <AlertError {...ErrorData} />
                 <br />
                 <AlertWarning {...WarningData} />
@@ -69,9 +72,16 @@ function App() {
                 <br />
                 <AlertTimer {...TimerData} />
                 <br />
-                <AlertAjax {...AjaxData} />
+                 */}
+                
+                <div className="App-button">
+                  <p>Report user here.</p>
+                  <AlertAjax {...AjaxData} />
+                </div>
+                
             </header>
         </div>
+        
       );
 }
 

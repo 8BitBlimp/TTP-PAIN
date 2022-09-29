@@ -5,6 +5,7 @@ import { myFunc } from "./Webhook/Webhook";
 
 
 
+
 export default class AlertAjax extends Component {
   constructor() {
     super();
@@ -12,18 +13,19 @@ export default class AlertAjax extends Component {
   }
 
   HandleClick() {
-    const {value: discordID } = Swal.fire({
+    let {result: pain} = Swal.fire({
       ...this.props,
       closeOnConfirm: false,
-      closeOnCancel: false,
+      closeOnCancel: true,
       preConfirm: (value) => {
-        if(!value) Swal.showValidationMessage('Write something!!')
+        if(!value || !Number.isInteger(+value)) Swal.showValidationMessage('Please enter a Discord ID');
       }
-    }).then(function(isConfirm){
-      if(isConfirm){
-        Swal.fire('Reported user.')
-        myFunc()
-      }
+    }).then((pain) =>{
+      if(pain.value){
+        Swal.fire(`Reported user with ID: ${pain.value}.`)
+        myFunc(pain.value)
+        
+      } else Swal.close()
     })
     
   
@@ -37,10 +39,9 @@ export default class AlertAjax extends Component {
     return (
       <div>
         <button class="btn btn-info" onClick={this.HandleClick}>
-          Show Ajax Alert
+          Report User
         </button>
       </div>
     );
   }
 }
-
