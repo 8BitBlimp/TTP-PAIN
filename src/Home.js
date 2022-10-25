@@ -52,7 +52,7 @@ const ErrorData = {
     showLoaderOnConfirm: true
   };
 
-function App() {
+function Home() {
     return (
 
         <div className="App">
@@ -65,7 +65,7 @@ function App() {
                       className="App-socials Twitter"
                       onClick={(e) => {
                         e.preventDefault();
-                        window.location.href="https://discord.com"
+                        window.location.href="/About"
                       }}
                     >About </button>
                     <hr className="App-divider"></hr>
@@ -94,4 +94,4 @@ function App() {
       );
 }
 
-export default App;
+export default Home;

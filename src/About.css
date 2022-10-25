@@ -1,0 +1,31 @@
+.About {
+    font-family: sans-serif;
+    text-align: center;
+}
+.About-logo {
+    height: 5vmin;
+    pointer-events: none;
+}
+.About-header {
+    position: relative;
+        margin: auto;
+    background-color: coral;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: calc(10px + 2vmin);
+    overflow:hidden;
+}
+.About-something {
+    background-color: grey;
+    border-radius: 4px;
+    margin-left: 20%;
+    margin-right: 20%;
+    outline-style: solid;
+    outline-color: violet;
+}
+.About-title {
+    font-size: calc(15px + 2vmin);
+    font-weight: bold;
+}
