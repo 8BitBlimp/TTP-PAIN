@@ -16,15 +16,17 @@
     /* align-items: center; */
     color: white;
     font-size: calc(10px + 2vmin);
+    overflow:hidden;
 }
 .App-button {
-    /* flex-direction: row; */
+    flex-direction: column;
     
-    position:absolute;
+    position:static;
     margin: auto;
     margin-top: 150px;
-    margin-left: 2%;
-    align-items: flex-start;
+    margin-left: 40%;
+    margin-right: 40%;
+    align-items: center;
     outline: 20px;
     outline-color:rgb(144, 105, 203);
     outline-style: solid;
@@ -34,4 +36,19 @@
 
 .App-divider{
     border-top: 3px solid #fff;
+}
+
+.App-socials {
+    position: absolute;
+    margin-left:calc(10% + 10px);
+    border-radius: 10px;
+
+}
+
+.Twitter:hover {
+    background:rgb(0, 0, 0)
+}
+.Twitter{
+    background: rgb(144, 105, 203);
+    color: white;
 }

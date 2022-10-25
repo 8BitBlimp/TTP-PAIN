@@ -60,8 +60,17 @@ function App() {
                 <h2>
                     Tax The Poor
                     <img src={logo} className="App-logo" alt="logo"></img>
+                    <button
+                      type="button"
+                      className="App-socials Twitter"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.location.href="https://discord.com"
+                      }}
+                    >About </button>
                     <hr className="App-divider"></hr>
                 </h2>
+                
                 <br />
                 {/*   
                 <AlertError {...ErrorData} />
