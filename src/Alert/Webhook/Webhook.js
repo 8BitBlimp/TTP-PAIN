@@ -2,10 +2,11 @@
 
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 
-const hook = new Webhook('https://discord.com/api/webhooks/1011593686058016840/--5Hq58np2-PaoLwPKEY9XsCy7cq9gzucQwMA98eZQlk35QG-6laxI8VtKk3pCWwJ6rY')
+// get env from .env
+require('dotenv').config();
 
-
-// const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1011593686058016840/--5Hq58np2-PaoLwPKEY9XsCy7cq9gzucQwMA98eZQlk35QG-6laxI8VtKk3pCWwJ6rY'})
+// get webhook url from .env
+const hook = new Webhook(process.env.WEBHOOK_URL);
 
 
 export const myFunc = (value) => {
